@@ -1,0 +1,74 @@
+[
+    {
+        "_id": {
+            "$oid": "6115c22972cf3f085fa131c8"
+        },
+        "script": "This is a demo script",
+        "language": "cartel",
+        "map_name": "Town03",
+        "name": "Demo No.1",
+        "desc": "A normal scenario desc(optional)",
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "categories": [
+            "cat1",
+            "cat2"
+        ],
+        "id": {
+            "$uuid": "e8aa7f38c0f8427bb6cf68947d7e826b"
+        },
+        "by_user_id": {
+            "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6115c24472cf3f085fa131ca"
+        },
+        "script": "This is another demo script",
+        "language": "cartel",
+        "map_name": "Town05",
+        "name": "Demo No.2",
+        "desc": "A great scen",
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "categories": [
+            "cat1",
+            "cat5"
+        ],
+        "id": {
+            "$uuid": "7e451de1bcbc42eea18e95133803ce76"
+        },
+        "by_user_id": {
+            "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6117f59972cf3f085fa126cb"
+        },
+        "script": "This is the 3rd demo script",
+        "language": "cartel",
+        "map_name": "Town10",
+        "name": "Demo No.3",
+        "desc": "Such a good one",
+        "tags": [
+            "tag6",
+            "tag8"
+        ],
+        "categories": [
+            "cat1",
+            "cat5"
+        ],
+        "id": {
+            "$uuid": "885af309-0b85-4bbd-b255-efe7438ae5ad"
+        },
+        "by_user_id": {
+            "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+        }
+    }
+]

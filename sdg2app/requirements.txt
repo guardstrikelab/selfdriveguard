@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+fastapi-users
+mongomock
+motor
+walrus
+configparser
+requests
+pytest
+yapf
+fakeredis

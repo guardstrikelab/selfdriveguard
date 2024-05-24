@@ -1,0 +1,120 @@
+// demo1.scenest demonstrates a rear-end collision between npc and ego, with the assertion of this collision.
+// This script specifies a safety_assertion. During the time period when the safety_assertion takes effect, npc1 should be within the perceptual range, and the perceptual error should be less than the threshold, and the distance between ego and npc should not be less than 1.1 meters.
+// During the simulation, npc1 will rear-end the ego vehicle from the rear at a pace of 10. User can view the real-time map and the image of ego vehicle camera through the three windows on the right side of the webpage. When the collision occurs, the simulation ends, and the collision error will be reported in the "Assert key point" area at the bottom of the webpage.
+
+map = "Town03";
+
+// ego car
+ego_init_position = (109, 62.48); //default coordinate frame is ENU
+ego_target_position = (165, 62.48); //default coordinate frame is ENU
+ego_init_state = (ego_init_position);
+ego_target_state = (ego_target_position);
+
+car_model = "Lincoln MKZ 2017";
+car_color = (255, 0, 0);
+vehicle_type = (car_model, car_color);
+ego_vehicle = AV(ego_init_state, ego_target_state, vehicle_type);
+
+// npc car
+npc1_init_state = ((99, 62.48), ,8); 	// start
+npc1_waypoint = ((109, 62.48));
+npc1_target_state = ((130, 62.48)); 	// target
+npc1_waypoints = (npc1_waypoint);
+npc1 = Vehicle(npc1_init_state, Waypoint(npc1_waypoints), npc1_target_state, ("vehicle.mini.cooperst", (100,100,100)));
+
+// npc 2: move along given waypoints
+npc2_init_state = ("52.-1"->5.0, ,5.0); 	// start
+npc2_waypoints = (("52.-1"->5.0, , 0.0), ("52.1"->2.0, ,1.0));
+npc2_target_state = ("52.1"->2.0, ,0.0); 	// target
+npc2 = Vehicle(npc2_init_state, Waypoint(npc2_waypoints), npc2_target_state, vehicle_type);
+
+// npc 3: static vehicle
+npc3 = Vehicle(("75.-1"->0.0, ,0.0), , ("494.-1"->1.0, ,0.0));
+
+npcs = {npc1,npc2,npc3};
+
+// pedestrian
+pedestrian_type = (1.65, black);
+pedestrian1 = Pedestrian(((-15.9, 110), ,0.5), , ((-56, 123), ,0), pedestrian_type);
+pedestrian2 = Pedestrian(((101, 62), ,0.5), , ((120, 144), ,0), pedestrian_type);
+pedestrians = {pedestrian1, pedestrian2};
+
+// env
+time = 10:00;
+weather = {rain: 0.1};
+env = Environment(time, weather);
+
+// traffic requirements
+speed_range = (0, 20);
+speed_limit = SpeedLimit("52.-1", speed_range);
+intersection = Intersection(1, 1, 0, 1);
+traffic = {intersection, speed_limit};
+
+scenario0 = CreateScenario{load(map);
+			        ego_vehicle;
+			        npcs;
+			        pedestrians;
+			        {};
+			        env;
+			        traffic;
+};
+
+Trace trace = EXE(scenario0);
+
+ego_vehicle_state= trace[ego];
+npc_vehicle1= trace[perception][npc1];
+npc_vehicle1_truth= trace[truth][npc1];
+npc_vehicle2 = trace[perception][npc2];
+npc_vehicle2_truth = trace[truth][npc2];
+npc_vehicle3= trace[perception][npc3];
+npc_vehicle3_truth =  trace[truth][npc3];
+
+
+// assertion related to npc_vehicle1
+dis1 = dis(ego_vehicle_state, npc_vehicle1_truth);
+dis2 = dis(ego_vehicle_state, npc_vehicle2_truth);
+dis3 = dis(ego_vehicle_state, npc_vehicle3_truth);
+vel1 = vel(ego_vehicle_state, npc_vehicle1_truth);
+vel2 = vel(ego_vehicle_state, npc_vehicle2_truth);
+vel3 = vel(ego_vehicle_state, npc_vehicle3_truth);
+spd1 = spd(ego_vehicle_state, npc_vehicle1_truth);
+spd2 = spd(ego_vehicle_state, npc_vehicle2_truth);
+spd3 = spd(ego_vehicle_state, npc_vehicle3_truth);
+error1 = diff(npc_vehicle1, npc_vehicle1_truth);
+error2 = diff(npc_vehicle2, npc_vehicle2_truth);
+error3 = diff(npc_vehicle3, npc_vehicle3_truth);
+
+a = 10;
+b =2;
+c = a * b;
+
+d = c+1;
+
+
+statement9 = dis1 <= 30;
+statement10 = dis2 <= 40;
+
+// assertion 1
+statement1 = dis1 >= 1.1;
+trace |= G statement1;
+
+// assertion 2
+statement2 = dis2 .+ 1 .*2 >= c ./2;
+statement3 = dis3 >= 0.5;
+trace |= G (statement1 & statement2 & statement3);
+
+// assertion 3
+statement4 = dis1 <= 2.0 -> spd1 < 0.0;
+trace |= G statement4;
+
+// assertion 4
+statement5 = dis1<=100 -> error1<1.0;
+trace |= G statement5;
+
+// assertion 5
+statement6 = (error1 .+ error2 .+ error3)./(c.+1);
+trace |= G statement6 <= 0.8;
+
+// assertion 6
+statement8 = 2.*(dis1 .- dis2) ./ ((vel1 .- vel2) .+ 2.0) > 0;
+trace |= statement8;

@@ -1,0 +1,184 @@
+{
+  "id": "2287311",
+  "name": "自动驾驶",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "24128455",
+      "name": "传感器",
+      "font_class": "chuanganqi",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "24128456",
+      "name": "交通参与者",
+      "font_class": "jiaotongcanyuzhe",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "24128457",
+      "name": "地图管理",
+      "font_class": "dituguanli",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "24128458",
+      "name": "环境管理",
+      "font_class": "huanjingguanli",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "24128459",
+      "name": "场景库",
+      "font_class": "changjingku1",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "24128460",
+      "name": "模拟测试",
+      "font_class": "moniceshi",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "24128461",
+      "name": "自动驾驶系统",
+      "font_class": "zidongjiashixitong",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "20407266",
+      "name": "完成",
+      "font_class": "wancheng",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "20407267",
+      "name": "运行",
+      "font_class": "yunhang",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "20407272",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "20406098",
+      "name": "中文",
+      "font_class": "zhongwen",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "20406099",
+      "name": "英文",
+      "font_class": "yingwen",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "20253078",
+      "name": "项目",
+      "font_class": "xiangmu1",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "20253079",
+      "name": "场景库",
+      "font_class": "changjingku",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "19390224",
+      "name": "plus-circle",
+      "font_class": "plus-circle",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "19390190",
+      "name": "ellipsis",
+      "font_class": "ellipsis",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "19390159",
+      "name": "document",
+      "font_class": "document",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "19390161",
+      "name": "项目",
+      "font_class": "xiangmu",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "19318154",
+      "name": "用户",
+      "font_class": "user",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "19238235",
+      "name": "close-square-fill",
+      "font_class": "close-square-fill",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "18978542",
+      "name": "视频",
+      "font_class": "video",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "18978543",
+      "name": "下拉",
+      "font_class": "arrow-down",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "18978544",
+      "name": "图片",
+      "font_class": "pic",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "18978545",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "18978546",
+      "name": "线性双箭头",
+      "font_class": "arrow",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    }
+  ]
+}

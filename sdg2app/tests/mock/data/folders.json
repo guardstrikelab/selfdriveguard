@@ -1,0 +1,65 @@
+[
+  {
+    "_id": {
+      "$oid": "6115c0fc72cf3f085fa131c3"
+    },
+    "name": "root",
+    "desc": "This is root folder, can not be changed",
+    "id": {
+      "$uuid": "80cb2df769b946429a2cea581ce2d497"
+    },
+    "scenarios_id": [
+      {
+        "$uuid": "e8aa7f38c0f8427bb6cf68947d7e826b"
+      },
+      {
+        "$uuid": "7e451de1bcbc42eea18e95133803ce76"
+      }
+    ],
+    "subfolders_id": [
+      {
+        "$uuid": "6aea7f3d16e543cdb1b06f92c400334c"
+      },
+      {
+        "$uuid": "99ea7f3d16e543cdb1b06f92c4003355"
+      }
+    ],
+    "by_user_id": {
+      "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6115c12d72cf3f085fa131c5"
+    },
+    "name": "sub 1",
+    "desc": "I feel happy with this folder",
+    "id": {
+      "$uuid": "6aea7f3d16e543cdb1b06f92c400334c"
+    },
+    "scenarios_id": [
+      {
+        "$uuid": "885af309-0b85-4bbd-b255-efe7438ae5ad"
+      }
+    ],
+    "subfolders_id": [],
+    "by_user_id": {
+      "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6115c12d72cf3f085fa131c8"
+    },
+    "name": "sub 2",
+    "desc": "I feel sad with this folder",
+    "id": {
+      "$uuid": "99ea7f3d16e543cdb1b06f92c4003355"
+    },
+    "scenarios_id": [],
+    "subfolders_id": [],
+    "by_user_id": {
+      "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+    }
+  }
+]

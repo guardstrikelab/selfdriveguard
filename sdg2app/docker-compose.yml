@@ -1,0 +1,14 @@
+services: 
+    app:
+        image: registry.cn-beijing.aliyuncs.com/selfdriveguard/sdg-app:latest
+        # If you want to build the local project, comment the line above and uncomment the line below
+        # build: .
+        ports:
+            - "8000:80"
+        environment: 
+            redis_host: sdgv2app.redis.rds.aliyuncs.com
+            redis_port: 6379
+            redis_db: 0
+            redis_password: NeedToFill
+            mongo_connection_string: NeedToFill
+            mongo_db_name: sdgApp

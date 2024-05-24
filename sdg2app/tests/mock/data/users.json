@@ -1,0 +1,18 @@
+[
+    {
+        "_id": {
+            "$oid": "6115c0fc72cf3f085fa131c1"
+        },
+        "id": {
+            "$uuid": "2c0e4163a0a84d27a481d26e1117d924"
+        },
+        "email": "test@sdg.com",
+        "is_active": true,
+        "is_superuser": false,
+        "is_verified": false,
+        "hashed_password": "$2b$12$0N.kR.r97IyZIbju8ZKDcOH2LSqZfmt4D68o7ml3WWTrCYYNd0EJS",
+        "rootfolder": {
+            "$uuid": "80cb2df769b946429a2cea581ce2d497"
+        }
+    }
+]

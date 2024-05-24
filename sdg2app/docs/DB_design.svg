@@ -1,0 +1,449 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='768' height='734' viewBox='0 0 768 734' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Trebuchet MS, 'Trebuchet MS', Dialog; font-size:14.083333015441895px; }
+  a text:hover        { fill:#0d196f; text-shadow: 0px 0px 6px #d0ce00; font-size:13px; font-weight: bold;}
+  text.highlight      { fill:#0d196f; text-shadow: 0px 0px 4px #eac533; font-size:13px; font-weight: bold;}
+  text.white          { fill:#ffffff; }
+  text.colType        { fill:#b3b3b3; }
+  text.relName        { fill:#9c9a9a; }
+  text.legendTitle    { fill:#d65c68; font-weight:bold; }
+  text.legendSubTitle { fill:#717171; font-size:11px; }
+  path                { stroke:#857f70; stroke-width:1.45; fill:none;}
+  path.virtual        { stroke:#a67822; }
+  path.logo           { fill:#fbeac0;fill-opacity:1;stroke-width:0.3;stroke:#222222; }
+  path.dotted         { stroke-dasharray:4,2; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:3; stroke:#0054c5; opacity:0.8;}
+  rect.entity         { fill:#ffffff; stroke:#777; stroke-width:1;shape-rendering:crispEdges; filter:url(#shadow); }
+  line.delim          { stroke-width:1; shape-rendering:crispEdges; }
+  text.callout        { fill:#000000; font-family: Trebuchet MS, 'Trebuchet MS', Dialog; font-size:15.166666984558105px; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; }
+  rect.grp            { stroke:#a1a1a1; stroke-width:3; opacity:0.25; }
+  path.bgPattern      { fill:none;stroke-width:0.6;stroke:#e5e9ed; }
+</style>
+<defs>
+  <radialGradient id='layoutBgB' cx='100%' cy='100%' r='100%'  >
+    <stop offset='0%' stop-color='#dfdfdf' />
+    <stop offset='100%' stop-color='#f2f2f2' />
+  </radialGradient>
+  <pattern id="layoutBgA" width="60" height="34.64" patternUnits="userSpaceOnUse">
+    <rect width="100%" height="100%" fill="#f0f1f3" />
+    <path class='bgPattern' d='M 0 17.32 L 10 0 L 30 0 L 40 17.326 L 30 34.64 L 10 34.64 Z' />
+    <path class='bgPattern' d='M 40 17.32 L 60 17.32 Z' />
+  </pattern>
+  <!-- https://norbat.de/svg-pattern-3d-webmuster/ -->
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+    <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/>
+    <stop offset='100%' stop-color='#999999' stop-opacity='0' />
+  </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+    <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id="shadow" width="120%" height="120%">
+    <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#333" flood-opacity="0.2" />
+  </filter>
+  <!--
+  <filter id='shadow2' width='120%' height='120%'>
+    <feOffset result='offOut' in='SourceGraphic' dx='0' dy='0' />
+    <feColorMatrix result='matrixOut' in='offOut'
+                   values='0.5 0 0 0 0 0 0.5 0 0 0 0 0 0.5 0 0 0 0 0 0.5 0' />
+    <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' />
+    <feBlend in='SourceGraphic' in2='blurOut' />
+  </filter>
+  -->
+  <filter id='fkShadow' height='130%'>
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+      <feMergeNode/> <!-- this contains the offset blurred image -->
+      <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' cx='5%' cy='5%' r='100%' >
+    <stop offset='0%' stop-color='#e4eeff' stop-opacity='1'/>
+    <stop offset='100%' stop-color='#c3d2ea' stop-opacity='1' />
+  </radialGradient>
+  <symbol id='calloutArrowDown' >
+    <path d='M 0,0 L 8,12 L 16,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+    <path d='M 0,0 L 8,12 L 16,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' >
+    <path d='M 0,16 L 8,4 L 16,16 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+    <path d='M 0,16 L 8,4 L 16,16' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' >
+    <g transform='scale(0.99)'>
+      <path style='fill:#f0d938;stroke:#906b25;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;'
+            d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+      <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+            style='fill:#ffe5a5;fill-opacity:1;stroke:#906b25;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='idx1' >
+    <g transform='scale(0.99)'>
+      <rect width='4' height='4' x='7' y='1' style='fill:#ffff3f;stroke:#b48333;stroke-width:0.6;' ry='0.83'/>
+      <rect width='4' height='4' x='1' y='7' style='fill:#ffff3f;stroke:#b48333;stroke-width:0.6;' ry='0.832'/>
+      <rect width='4' height='4' x='7' y='7' style='fill:#ffff3f;stroke:#b48333;stroke-width:0.6;' ry='0.832'/>
+    </g>
+  </symbol>
+  <symbol id='idx2' >
+    <g transform='scale(0.99)'>
+      <rect width='4' height='3' x='6' y='1' style='fill:#7fc8e9;stroke:#2f6f8c;stroke-width:0.6;' ry='0.83'/>
+      <rect width='7' height='3' x='3' y='6' style='fill:#7fc8e9;stroke:#2f6f8c;stroke-width:0.6;' ry='0.832'/>
+    </g>
+  </symbol>
+  <symbol id='unq' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:none;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+            width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+            transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.8' y='7.4' style='font-size:7px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:none;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+            width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+            transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#6a88cd;stroke:#5a72a8;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f0d938;stroke:#906b25;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag0' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag1' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#f4a393;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag2' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#77ec8b;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+            d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' >
+    <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <symbol id='view' >
+    <g transform='scale(0.99)'>
+      <line x1='12' y1='6' x2='19' y2='0' stroke='black' stroke-width='0.5' />
+      <line x1='0' y1='6' x2='7' y2='0' stroke='black' stroke-width='0.5' />
+      <circle cx='3' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+      <circle cx='10' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+    </g>
+  </symbol>
+</defs>
+
+<defs>  <marker id='arrow01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <linearGradient id='tbg_D1BEF4' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#ECE3FE' /> 
+     <stop offset='40%' stop-color='#DFCEFF' /> 
+     <stop offset='100%' stop-color='#C4B3E5' /> 
+  </linearGradient>
+  <linearGradient id='tbg_C7F4BE' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E7FEE3' /> 
+     <stop offset='40%' stop-color='#D6FFCE' /> 
+     <stop offset='100%' stop-color='#BBE5B3' /> 
+  </linearGradient>
+  <linearGradient id='tbg_BED3F4' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E3EDFE' /> 
+     <stop offset='40%' stop-color='#CEE0FF' /> 
+     <stop offset='100%' stop-color='#B3C6E5' /> 
+  </linearGradient>
+  <linearGradient id='tbg_F4DDBE' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#FEF2E3' /> 
+     <stop offset='40%' stop-color='#FFE9CE' /> 
+     <stop offset='100%' stop-color='#E5CFB3' /> 
+  </linearGradient>
+  <linearGradient id='tbg_BEBEF4' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E3E3FE' /> 
+     <stop offset='40%' stop-color='#CECEFF' /> 
+     <stop offset='100%' stop-color='#B3B3E5' /> 
+  </linearGradient>
+</defs>
+
+<!-- == Desktop == -->
+<rect x='1' y='1' width='766' height='732' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#84827b; stroke-width:0.5;' />
+<rect x='1' y='1' width='766' height='732' rx='8' ry='8' style='fill:url(#layoutBgTr);' />
+
+<!-- == Legend == -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='230' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='20' y='25' class='legendTitle' >sdgApp</text> 
+  <a xlink:href='https://dbschema.com'><text x='20' y='39' class='legendSubTitle'><tspan>(c) DbSchema</tspan></text></a> 
+  <text x='20' y='53' class='legendSubTitle'><tspan>Hover columns to read the comments.</tspan></text> 
+</g>
+
+<g transform='translate(0,110)'>
+<!-- == Group 'jobs' == -->
+<rect class='grp' style='fill:#E5FCE1;stroke:#A4C79E' x='368' y='333' width='128' height='162' />
+<text x='380' y='349'>jobs</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='380' y='353' width='104' height='2' />
+
+<!-- == Group 'scenarios' == -->
+<rect class='grp' style='fill:#FCF0E1;stroke:#C7B59E' x='32' y='333' width='144' height='226' />
+<text x='44' y='349'>scenarios</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='44' y='353' width='120' height='2' />
+
+<!-- == Group 'users' == -->
+<rect class='grp' style='fill:#E1E1FC;stroke:#9E9EC7' x='592' y='333' width='144' height='146' />
+<text x='604' y='349'>users</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='604' y='353' width='120' height='2' />
+
+<!-- == Group 'folders' == -->
+<rect class='grp' style='fill:#EAE1FC;stroke:#AC9EC7' x='592' y='45' width='144' height='178' />
+<text x='604' y='61'>folders</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='604' y='65' width='120' height='2' />
+
+<!-- == Group 'tasks' == -->
+<rect class='grp' style='fill:#E1EBFC;stroke:#9EADC7' x='32' y='45' width='464' height='194' />
+<text x='44' y='61'>tasks</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='44' y='65' width='440' height='2' />
+
+<!-- == Fk 'folders_Fk_folders_users' == -->
+<path id='folders_Fk_folders_users'  onmouseover="hghl(['folders_Fk_folders_users','sdgApp.folders.by_user','sdgApp.users._id'])" onmouseout="uhghl(['folders_Fk_folders_users','sdgApp.folders.by_user','sdgApp.users._id'])" transform='translate(8,0)' class='scene' d='M 624,208L 624,352' >
+	<title>Fk Fk_folders_users
+folders ref users ( by_user -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted virtual'  d='M 624,208L 624,352' ><title>Fk Fk_folders_users
+folders ref users ( by_user -&gt; _id )</title></path>
+<text x='637' y='210' transform='rotate(90 637,210)' class='relName'>by_user</text>
+<!-- == Fk 'folders_Fk_folders_scenarios' == -->
+<path id='folders_Fk_folders_scenarios'  onmouseover="hghl(['folders_Fk_folders_scenarios','sdgApp.folders.scenarios','sdgApp.scenarios._id'])" onmouseout="uhghl(['folders_Fk_folders_scenarios','sdgApp.folders.scenarios','sdgApp.scenarios._id'])" transform='translate(8,0)' class='scene' d='M 592,176L 504,176Q 496,176 496,184L 496,328Q 496,336 488,336L 152,336Q 144,336 144,344L 144,352' >
+	<title>Fk Fk_folders_scenarios
+folders ref scenarios ( scenarios -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted virtual'  d='M 592,176L 504,176Q 496,176 496,184L 496,328Q 496,336 488,336L 152,336Q 144,336 144,344L 144,352' ><title>Fk Fk_folders_scenarios
+folders ref scenarios ( scenarios -&gt; _id )</title></path>
+<text x='544' y='171' transform='rotate(0 544,171)' class='relName'>scenarios</text>
+<!-- == Fk 'jobs_Fk_job_user' == -->
+<path id='jobs_Fk_job_user'  onmouseover="hghl(['jobs_Fk_job_user','sdgApp.jobs.by_user','sdgApp.users._id'])" onmouseout="uhghl(['jobs_Fk_job_user','sdgApp.jobs.by_user','sdgApp.users._id'])" transform='translate(8,0)' class='scene' d='M 480,384L 592,384' >
+	<title>Fk Fk_job_user
+jobs ref users ( by_user -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'  class='virtual'  d='M 480,384L 592,384' ><title>Fk Fk_job_user
+jobs ref users ( by_user -&gt; _id )</title></path>
+<text x='490' y='379' transform='rotate(0 490,379)' class='relName'>by_user</text>
+<!-- == Fk 'jobs_Fk_job_task' == -->
+<path id='jobs_Fk_job_task'  onmouseover="hghl(['jobs_Fk_job_task','sdgApp.jobs.tasks','sdgApp.tasks._id'])" onmouseout="uhghl(['jobs_Fk_job_task','sdgApp.jobs.tasks','sdgApp.tasks._id'])" transform='translate(8,0)' class='scene' d='M 368,368L 200,368Q 192,368 192,360L 192,216Q 192,208 184,208L 176,208' >
+	<title>Fk Fk_job_task
+jobs ref tasks ( tasks -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'  class='virtual'  d='M 368,368L 200,368Q 192,368 192,360L 192,216Q 192,208 184,208L 176,208' ><title>Fk Fk_job_task
+jobs ref tasks ( tasks -&gt; _id )</title></path>
+<text x='347' y='363' transform='rotate(0 347,363)' class='relName'>tasks</text>
+<!-- == Fk 'result_JSon' == -->
+<path id='result_JSon'  onmouseover="hghl(['result_JSon','sdgApp.tasks.result'])" onmouseout="uhghl(['result_JSon','sdgApp.tasks.result'])" transform='translate(8,0)' class='scene' d='M 208,96L 176,96' >
+	<title>Fk JSon
+result ref tasks (  )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot01)' marker-end='url(#arrow01)'  class='dotted '  d='M 208,96L 176,96' ><title>Fk JSon
+result ref tasks (  )</title></path>
+<text x='196' y='91' transform='rotate(0 196,91)' class='relName'>Obj</text>
+<!-- == Fk 'scores_JSon' == -->
+<path id='scores_JSon'  onmouseover="hghl(['scores_JSon','sdgApp.tasks.scores'])" onmouseout="uhghl(['scores_JSon','sdgApp.tasks.scores'])" transform='translate(8,0)' class='scene' d='M 368,96L 336,96' >
+	<title>Fk JSon
+scores ref result (  )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow01)'  class='dotted '  d='M 368,96L 336,96' ><title>Fk JSon
+scores ref result (  )</title></path>
+<text x='358' y='91' transform='rotate(0 358,91)' class='relName'>Ary</text>
+<!-- == Fk 'tasks_Fk_task_scenario' == -->
+<path id='tasks_Fk_task_scenario'  onmouseover="hghl(['tasks_Fk_task_scenario','sdgApp.tasks.use_scenario','sdgApp.scenarios._id'])" onmouseout="uhghl(['tasks_Fk_task_scenario','sdgApp.tasks.use_scenario','sdgApp.scenarios._id'])" transform='translate(8,0)' class='scene' d='M 64,224L 64,352' >
+	<title>Fk Fk_task_scenario
+tasks ref scenarios ( use_scenario -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'  class='virtual'  d='M 64,224L 64,352' ><title>Fk Fk_task_scenario
+tasks ref scenarios ( use_scenario -&gt; _id )</title></path>
+<text x='77' y='226' transform='rotate(90 77,226)' class='relName'>use_scenario</text>
+<!-- == Fk 'scenarios_Fk_scenarios_users' == -->
+<path id='scenarios_Fk_scenarios_users'  onmouseover="hghl(['scenarios_Fk_scenarios_users','sdgApp.scenarios.by_user','sdgApp.users._id'])" onmouseout="uhghl(['scenarios_Fk_scenarios_users','sdgApp.scenarios.by_user','sdgApp.users._id'])" transform='translate(8,0)' class='scene' d='M 160,496L 616,496Q 624,496 624,488L 624,464' >
+	<title>Fk Fk_scenarios_users
+scenarios ref users ( by_user -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted virtual'  d='M 160,496L 616,496Q 624,496 624,488L 624,464' ><title>Fk Fk_scenarios_users
+scenarios ref users ( by_user -&gt; _id )</title></path>
+<text x='170' y='491' transform='rotate(0 170,491)' class='relName'>by_user</text>
+<!-- == Fk 'users_Fk_users_folders' == -->
+<path id='users_Fk_users_folders'  onmouseover="hghl(['users_Fk_users_folders','sdgApp.users.rootfolder','sdgApp.folders._id'])" onmouseout="uhghl(['users_Fk_users_folders','sdgApp.users.rootfolder','sdgApp.folders._id'])" transform='translate(8,0)' class='scene' d='M 640,352L 640,208' >
+	<title>Fk Fk_users_folders
+users ref folders ( rootfolder -&gt; _id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow01)'  class='dotted virtual'  d='M 640,352L 640,208' ><title>Fk Fk_users_folders
+users ref folders ( rootfolder -&gt; _id )</title></path>
+<text x='643' y='350' transform='rotate(270 643,350)' class='relName'>rootfolder</text>
+<!-- == Table 'folders' == -->
+<rect class='entity' style='stroke:none;' x='608' y='72' width='112' height='128' rx='8' ry='8' />
+<path d='M 608 100 L 608 80 Q 608 72 616 72 L 712 72 Q 720 72 720 80 L 720 100 L608 100 ' style='fill:url(#tbg_D1BEF4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='608' y='72' width='112' height='128' rx='8' ry='8' style='fill:none;stroke:#D5CBE8'/>
+<a xlink:href='#sdgApp.folders'><text x='638' y='91' >folders</text><title>Collection sdgApp.folders</title></a>
+  <a xlink:href='#sdgApp.folders__id'><text id='sdgApp.folders._id' x='627' y='119' onmouseover="hghl(['users_Fk_users_folders','sdgApp.users.rootfolder'])" onmouseout="uhghl(['users_Fk_users_folders','sdgApp.users.rootfolder'])">_id</text><title>_id
+oid</title></a>
+<a xlink:href='#sdgApp.folders._id'><use id='ref' x='708' y='108' xlink:href='#ref'/><title>Referred by users ( rootfolder -&gt; _id ) </title></a>
+  <a xlink:href='#sdgApp.folders_subfolders'><text id='sdgApp.folders.subfolders' x='627' y='135' onmouseover="hghl(['subfolders_JSon'])" onmouseout="uhghl(['subfolders_JSon'])">subfolders</text><title>subfolders
+array[string]</title></a>
+  <a xlink:href='#sdgApp.folders_name'><text id='sdgApp.folders.name' x='627' y='151'>name</text><title>name
+string</title></a>
+<text x='717' y='148' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.folders_scenarios'><text id='sdgApp.folders.scenarios' x='627' y='167' onmouseover="hghl(['folders_Fk_folders_scenarios','sdgApp.scenarios._id','scenarios_JSon'])" onmouseout="uhghl(['folders_Fk_folders_scenarios','sdgApp.scenarios._id','scenarios_JSon'])">scenarios</text><title>scenarios
+array[string]</title></a>
+<a xlink:href='#sdgApp.folders.scenarios'><use id='fk' x='708' y='156' xlink:href='#fk'/><title>References scenarios ( scenarios -&gt; _id ) 
+Referred by scenarios (  ) </title></a>
+  <a xlink:href='#sdgApp.folders_by_user'><text id='sdgApp.folders.by_user' x='627' y='183' onmouseover="hghl(['folders_Fk_folders_users','sdgApp.users._id'])" onmouseout="uhghl(['folders_Fk_folders_users','sdgApp.users._id'])">by_user</text><title>by_user
+oid</title></a>
+<a xlink:href='#sdgApp.folders.by_user'><use id='fk' x='708' y='172' xlink:href='#fk'/><title>References users ( by_user -&gt; _id ) </title></a>
+
+<!-- == Table 'jobs' == -->
+<rect class='entity' style='stroke:none;' x='384' y='360' width='96' height='112' rx='8' ry='8' />
+<path d='M 384 388 L 384 368 Q 384 360 392 360 L 472 360 Q 480 360 480 368 L 480 388 L384 388 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='384' y='360' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#CFE8CB'/>
+<a xlink:href='#sdgApp.jobs'><text x='415' y='379' >jobs</text><title>Collection sdgApp.jobs</title></a>
+  <use id='nn' x='386' y='397' xlink:href='#nn'/><a xlink:href='#sdgApp.jobs__id'><text id='sdgApp.jobs._id' x='403' y='407'>_id</text><title>_id
+* oid</title></a>
+  <use id='nn' x='386' y='413' xlink:href='#nn'/><a xlink:href='#sdgApp.jobs_by_user'><text id='sdgApp.jobs.by_user' x='403' y='423' onmouseover="hghl(['jobs_Fk_job_user','sdgApp.users._id'])" onmouseout="uhghl(['jobs_Fk_job_user','sdgApp.users._id'])">by_user</text><title>by_user
+* oid</title></a>
+<a xlink:href='#sdgApp.jobs.by_user'><use id='fk' x='468' y='412' xlink:href='#fk'/><title>References users ( by_user -&gt; _id ) </title></a>
+  <use id='nn' x='386' y='429' xlink:href='#nn'/><a xlink:href='#sdgApp.jobs_tasks'><text id='sdgApp.jobs.tasks' x='403' y='439' onmouseover="hghl(['jobs_Fk_job_task','sdgApp.tasks._id'])" onmouseout="uhghl(['jobs_Fk_job_task','sdgApp.tasks._id'])">tasks</text><title>tasks
+* array[object]</title></a>
+<a xlink:href='#sdgApp.jobs.tasks'><use id='fk' x='468' y='428' xlink:href='#fk'/><title>References tasks ( tasks -&gt; _id ) </title></a>
+  <a xlink:href='#sdgApp.jobs_desc'><text id='sdgApp.jobs.desc' x='403' y='455'>desc</text><title>desc
+string</title></a>
+<text x='477' y='452' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'result' == -->
+<rect class='entity' style='stroke:none;' x='224' y='72' width='112' height='96' rx='8' ry='8' />
+<path d='M 224 100 L 224 80 Q 224 72 232 72 L 328 72 Q 336 72 336 80 L 336 100 L224 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='224' y='72' width='112' height='96' rx='8' ry='8' style='fill:none;stroke:#CBD6E8'/>
+<a xlink:href='#result'><text x='258' y='91' >result</text><title>Sub-document result</title></a>
+  <a xlink:href='#result_video'><text id='result.video' x='243' y='119'>video</text><title>video
+string
+url of video</title></a>
+<text x='333' y='116' text-anchor='end' class='colType'>t</text>  <a xlink:href='#result_assertions'><text id='result.assertions' x='243' y='135'>assertions</text><title>assertions
+array[object]
+a list of assertion result</title></a>
+  <a xlink:href='#result_scores'><text id='result.scores' x='243' y='151'>scores</text><title>scores
+array[object]</title></a>
+
+<!-- == Table 'scores' == -->
+<rect class='entity' style='stroke:none;' x='384' y='72' width='96' height='96' rx='8' ry='8' />
+<path d='M 384 100 L 384 80 Q 384 72 392 72 L 472 72 Q 480 72 480 80 L 480 100 L384 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='384' y='72' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#CBD6E8'/>
+<a xlink:href='#scores'><text x='408' y='91' >scores</text><title>Sub-document scores</title></a>
+  <use id='nn' x='386' y='109' xlink:href='#nn'/><a xlink:href='#scores_criterion'><text id='scores.criterion' x='403' y='119'>criterion</text><title>criterion
+* string</title></a>
+<text x='477' y='116' text-anchor='end' class='colType'>t</text>  <a xlink:href='#scores_pass'><text id='scores.pass' x='403' y='135'>pass</text><title>pass
+bool default 0</title></a>
+<text x='477' y='132' text-anchor='end' class='colType'>b</text>  <a xlink:href='#scores_value'><text id='scores.value' x='403' y='151'>value</text><title>value
+double</title></a>
+<text x='477' y='148' text-anchor='end' class='colType'>#</text>
+<!-- == Table 'tasks' == -->
+<rect class='entity' style='stroke:none;' x='48' y='72' width='128' height='144' rx='8' ry='8' />
+<path d='M 48 100 L 48 80 Q 48 72 56 72 L 168 72 Q 176 72 176 80 L 176 100 L48 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='48' y='72' width='128' height='144' rx='8' ry='8' style='fill:none;stroke:#CBD6E8'/>
+<a xlink:href='#sdgApp.tasks'><text x='92' y='91' >tasks</text><title>Collection sdgApp.tasks</title></a>
+  <use id='nn' x='50' y='109' xlink:href='#nn'/><a xlink:href='#sdgApp.tasks__id'><text id='sdgApp.tasks._id' x='67' y='119' onmouseover="hghl(['jobs_Fk_job_task','sdgApp.jobs.tasks'])" onmouseout="uhghl(['jobs_Fk_job_task','sdgApp.jobs.tasks'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#sdgApp.tasks._id'><use id='ref' x='164' y='108' xlink:href='#ref'/><title>Referred by jobs ( tasks -&gt; _id ) </title></a>
+  <use id='nn' x='50' y='125' xlink:href='#nn'/><a xlink:href='#sdgApp.tasks_ads'><text id='sdgApp.tasks.ads' x='67' y='135'>ads</text><title>ads
+* enum(&apos;autoware&apos;, &apos;pylot&apos;) default &apos;autoware&apos;
+the ads name</title></a>
+<text x='173' y='132' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.tasks_time_limit'><text id='sdgApp.tasks.time_limit' x='67' y='151'>time_limit</text><title>time_limit
+int default -1
+time limit by seconds</title></a>
+<text x='173' y='148' text-anchor='end' class='colType'>#</text>  <use id='nn' x='50' y='157' xlink:href='#nn'/><a xlink:href='#sdgApp.tasks_status'><text id='sdgApp.tasks.status' x='67' y='167'>status</text><title>status
+* enum(&apos;ready&apos;, &apos;running&apos;, &apos;done&apos;) default &apos;Ready&apos;
+progress</title></a>
+<text x='173' y='164' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.tasks_result'><text id='sdgApp.tasks.result' x='67' y='183' onmouseover="hghl(['result_JSon'])" onmouseout="uhghl(['result_JSon'])">result</text><title>result
+object</title></a>
+  <use id='nn' x='50' y='189' xlink:href='#nn'/><a xlink:href='#sdgApp.tasks_use_scenario'><text id='sdgApp.tasks.use_scenario' x='67' y='199' onmouseover="hghl(['tasks_Fk_task_scenario','sdgApp.scenarios._id'])" onmouseout="uhghl(['tasks_Fk_task_scenario','sdgApp.scenarios._id'])">use_scenario</text><title>use_scenario
+* oid</title></a>
+<a xlink:href='#sdgApp.tasks.use_scenario'><use id='fk' x='164' y='188' xlink:href='#fk'/><title>References scenarios ( use_scenario -&gt; _id ) </title></a>
+
+<!-- == Table 'scenarios' == -->
+<rect class='entity' style='stroke:none;' x='48' y='360' width='112' height='176' rx='8' ry='8' />
+<path d='M 48 388 L 48 368 Q 48 360 56 360 L 152 360 Q 160 360 160 368 L 160 388 L48 388 ' style='fill:url(#tbg_F4DDBE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='48' y='360' width='112' height='176' rx='8' ry='8' style='fill:none;stroke:#E8DBCB'/>
+<a xlink:href='#sdgApp.scenarios'><text x='71' y='379' >scenarios</text><title>Collection sdgApp.scenarios</title></a>
+  <use id='nn' x='50' y='397' xlink:href='#nn'/><a xlink:href='#sdgApp.scenarios__id'><text id='sdgApp.scenarios._id' x='67' y='407' onmouseover="hghl(['tasks_Fk_task_scenario','sdgApp.tasks.use_scenario','folders_Fk_folders_scenarios','sdgApp.folders.scenarios'])" onmouseout="uhghl(['tasks_Fk_task_scenario','sdgApp.tasks.use_scenario','folders_Fk_folders_scenarios','sdgApp.folders.scenarios'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#sdgApp.scenarios._id'><use id='ref' x='148' y='396' xlink:href='#ref'/><title>Referred by tasks ( use_scenario -&gt; _id ) 
+Referred by folders ( scenarios -&gt; _id ) </title></a>
+  <use id='nn' x='50' y='413' xlink:href='#nn'/><a xlink:href='#sdgApp.scenarios_script'><text id='sdgApp.scenarios.script' x='67' y='423'>script</text><title>script
+* string</title></a>
+<text x='157' y='420' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='429' xlink:href='#nn'/><a xlink:href='#sdgApp.scenarios_language'><text id='sdgApp.scenarios.language' x='67' y='439'>language</text><title>language
+* enum(&apos;cartel&apos;,&apos;scenic&apos;) default &apos;cartel&apos;</title></a>
+<text x='157' y='436' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='445' xlink:href='#nn'/><a xlink:href='#sdgApp.scenarios_map_name'><text id='sdgApp.scenarios.map_name' x='67' y='455'>map_name</text><title>map_name
+* string default &apos;Town03&apos;</title></a>
+<text x='157' y='452' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.scenarios_tags'><text id='sdgApp.scenarios.tags' x='67' y='471'>tags</text><title>tags
+array[string]</title></a>
+  <a xlink:href='#sdgApp.scenarios_categories'><text id='sdgApp.scenarios.categories' x='67' y='487'>categories</text><title>categories
+array[string]</title></a>
+  <a xlink:href='#sdgApp.scenarios_name'><text id='sdgApp.scenarios.name' x='67' y='503'>name</text><title>name
+string</title></a>
+<text x='157' y='500' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.scenarios_by_user'><text id='sdgApp.scenarios.by_user' x='67' y='519' onmouseover="hghl(['scenarios_Fk_scenarios_users','sdgApp.users._id'])" onmouseout="uhghl(['scenarios_Fk_scenarios_users','sdgApp.users._id'])">by_user</text><title>by_user
+oid</title></a>
+<a xlink:href='#sdgApp.scenarios.by_user'><use id='fk' x='148' y='508' xlink:href='#fk'/><title>References users ( by_user -&gt; _id ) </title></a>
+
+<!-- == Table 'users' == -->
+<rect class='entity' style='stroke:none;' x='608' y='360' width='112' height='96' rx='8' ry='8' />
+<path d='M 608 388 L 608 368 Q 608 360 616 360 L 712 360 Q 720 360 720 368 L 720 388 L608 388 ' style='fill:url(#tbg_BEBEF4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='608' y='360' width='112' height='96' rx='8' ry='8' style='fill:none;stroke:#CBCBE8'/>
+<a xlink:href='#sdgApp.users'><text x='644' y='379' >users</text><title>Collection sdgApp.users</title></a>
+  <use id='nn' x='610' y='397' xlink:href='#nn'/><a xlink:href='#sdgApp.users__id'><text id='sdgApp.users._id' x='627' y='407' onmouseover="hghl(['jobs_Fk_job_user','sdgApp.jobs.by_user','scenarios_Fk_scenarios_users','sdgApp.scenarios.by_user','folders_Fk_folders_users','sdgApp.folders.by_user'])" onmouseout="uhghl(['jobs_Fk_job_user','sdgApp.jobs.by_user','scenarios_Fk_scenarios_users','sdgApp.scenarios.by_user','folders_Fk_folders_users','sdgApp.folders.by_user'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#sdgApp.users._id'><use id='ref' x='708' y='396' xlink:href='#ref'/><title>Referred by jobs ( by_user -&gt; _id ) 
+Referred by scenarios ( by_user -&gt; _id ) 
+Referred by folders ( by_user -&gt; _id ) </title></a>
+  <a xlink:href='#sdgApp.users_name'><text id='sdgApp.users.name' x='627' y='423'>name</text><title>name
+string</title></a>
+<text x='717' y='420' text-anchor='end' class='colType'>t</text>  <a xlink:href='#sdgApp.users_rootfolder'><text id='sdgApp.users.rootfolder' x='627' y='439' onmouseover="hghl(['users_Fk_users_folders','sdgApp.folders._id'])" onmouseout="uhghl(['users_Fk_users_folders','sdgApp.folders._id'])">rootfolder</text><title>rootfolder
+oid</title></a>
+<a xlink:href='#sdgApp.users.rootfolder'><use id='fk' x='708' y='428' xlink:href='#fk'/><title>References folders ( rootfolder -&gt; _id ) </title></a>
+
+</g></svg>

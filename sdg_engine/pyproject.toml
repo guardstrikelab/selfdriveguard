@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "sdg_engine_2.1.0"
+version = "0.1.0"
+description = ""
+authors = ["Sheng Chao"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Shapely = "^1.8.0"
+antlr4-python3-runtime = "<4.9"
+requests = "^2.27.1"
+websockets = "^10.1"
+numpy = "1.19"
+networkx = "^2.6.3"
+roslibpy = "^1.2.1"
+metric-temporal-logic = "^0.2.2"
+scenic = "^2.0.0"
+tabulate = "^0.8.9"
+pynverse = "0.1.4.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true

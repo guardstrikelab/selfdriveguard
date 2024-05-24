@@ -1,0 +1,1 @@
+[{"_id": {"$oid": "6115c30172cf3f085fa131d3"}, "desc": "A brief desc", "tasks_id": [{"$uuid": "901673c313714719b36cd498fd3406c1"}, {"$uuid": "514c7619fd764518a17a286fac4ef4fc"}], "id": {"$uuid": "43f8b58dc09f44fbbd5bb7185b3a0df0"}, "by_user_id": {"$uuid": "2c0e4163a0a84d27a481d26e1117d924"}}]
