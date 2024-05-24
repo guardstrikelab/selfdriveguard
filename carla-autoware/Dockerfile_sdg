@@ -1,0 +1,9 @@
+FROM registry.cn-beijing.aliyuncs.com/ad-test/carla-autoware-extern:1.0.1
+
+WORKDIR /home/autoware
+
+USER autoware
+
+RUN pip3 install websockets
+
+ENTRYPOINT ["/bin/bash" ,"/home/autoware/my_scripts/start.sh"]

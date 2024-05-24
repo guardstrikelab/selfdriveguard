@@ -44,8 +44,7 @@
 1. Installation
 
    ```bash
-   # download repo
-   git clone https://codeup.aliyun.com/5f3f374f6207a1a8b17f933f/SelfDriveGuard/SelfDriveGuard_New/sdg_engine_lite_version.git
+   cd sdg_engine
    
    # go to the folder where the pyproject.toml is
    poetry export -f requirements.txt --output requirements.txt --without-hashes
@@ -61,10 +60,7 @@
 
    ```bash
    # step 2
-   git clone git@codeup.aliyun.com:5f3f374f6207a1a8b17f933f/SelfDriveGuard/carla-autoware.git
    cd carla-autoware
-   unzip autoware-contents.zip
-   rm autoware-contents.zip
    ```
 
    ```bash

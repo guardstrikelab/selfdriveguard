@@ -1,0 +1,5 @@
+<!-- -->
+<launch>
+  <node pkg="trace_generator" type="trace_generator.py" name="trace_generator" output="screen"> </node>
+</launch>
+
