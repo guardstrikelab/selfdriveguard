@@ -5,14 +5,10 @@
 Prerequisites:
 - Python3.8
 
-Clone this repo:
-```
-git clone git@codeup.aliyun.com:5f3f374f6207a1a8b17f933f/SelfDriveGuard/SelfDriveGuard_V2/sdg2-App.git
-```
 
 Enter project root folder:
 ```
-cd sdg2-App
+cd sdg2app
 ```
 
 Install python dependencies:
